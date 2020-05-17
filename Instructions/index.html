@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <style>
+        img{ width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;}
+    </style>
+
+    <meta charset="UTF-8">
+    <title>index</title>
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+ 
+  
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+      <div id="first_line_color">
+        <div class="row">   
+                <!-- <div class="form-inline">   -->
+                <div class="col-md-6">    
+
+                        <div class="first_line" >
+                            <div class="div1"><h1>Latitude</h1> </div>
+                        </div>    
+                </div>  
+                
+               <div class="col-md-2">     
+                    <!-- <div class="btn-group" role="group" aria-label="Basic example"> -->
+                        <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            plot
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="Temperature.html">Max Temperature</a>
+                            <a class="dropdown-item" href="Humidity.html">Humidity</a>
+                            <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                            <a class="dropdown-item" href="wind-speed.html">Wind-speed</a>
+                        </div>
+                        </div>
+                </div>  
+
+                <div class="col-md-2">  
+                    <form>
+                       <input class="MyButton1" type="button" value="Comparison" onclick="window.location.href='comparison.html'" />       
+                    </form>
+                </div> 
+
+                <div class="col-md-2">
+                      <form>
+                            <input class="MyButton2" type="button" value="data" onclick="window.location.href='weather_df.html'" />       
+                      </form>
+    <!-- <button type="button" href="data.html"> <a class="dropdown-item" href="https://www.youtube.com">Data</a> </button> --> 
+                </div>
+        </div>
+<!-- </div> -->
+     </div>
+<br>
+
+
+<div class="Col_container">
+    <!--Normally these medium columns go full wide on small screen sizes-->
+    <div class="row">
+      
+      
+      <div class="col-md-8">
+        <section id="summary">
+            <p>This project utilizes Python, API’s, and JSON traversals to try and answer a fundamental question:
+                “What’s the weather like as we get closer to the equator?”
+            </p>
+
+            <p> Assigning 1,500 random Latitude and Longitudes, I utilized the Python CitiPy library to find
+                the city closest to the Lat/Lon (dropping all duplicates) to get a listing of over 600 cities.
+                I utilized OpenWeatherMapAPI to get the weather for the cities (dropping cities with no data)
+                to create a dataframe of weather information for over 500 cities. 
+            </p>
+
+            <p>
+                The dataframe is saved to CSV and the data is analyzed across the three climate zones (Tropical 
+                Zone, Temperate Zone, and Polar Zone).  To showcase the relationship between latitude and 
+                temperature/humidity/cloudiness/wind speed I utilize MatplotLib scatter plots to view:
+            </p>
+
+            <ul>
+                <li>Temperature (F) vs. Latitude</li>
+                <li>Humidity (%) vs. Latitude</li>
+                <li>Cloudiness (%) vs. Latitude</li>
+                <li>Wind Speed (mph) vs. Latitude</li>
+
+            </ul>
+         
+        </section>
+      </main> 
+
+      </div>
+      <!-- </div> -->
+      
+      
+      <div class="col-md-4">
+          
+                <main class="container2">
+                    <header>
+                        <h2>Visualizations</h2>
+                    </header>
+                <!--Normally these medium columns go full wide on small screen sizes-->
+                <div class="row">
+                  <div class="col-xs-3 col-sm-3 col-md-6">
+                      <figure id="main1_figure">
+                          <!-- <figcaption>latitude_Max-Temperature</figcaption> -->
+                        <a href="./Temperature.html">
+                          <img src="LatVsTemp.png" alt="latitude_Max-Temperature" style="width:150px;height:150px;">
+                        </a>
+                        </figure>
+            
+                  </div>
+                  <div class="col-xs-3 col-sm-3 col-md-6">
+                      <figure id="main1_figure">
+                          <!-- <figcaption>latitude_Max-Temperature</figcaption> -->
+                          <a href="./cloudiness.html">
+                          <img   src="LatVsCloudiness.png" alt="latitude_Cloudiness" style="width:150px;height:150px;">
+                          </a>
+                        </figure>
+                  </div>
+                <!-- </div> -->
+
+                <!-- <div class="row"> -->
+                    <div class="col-xs-3 col-sm-3 col-md-6">
+                        <figure id="main1_figure">
+                            <!-- <figcaption>latitude_Max-Temperature</figcaption> -->
+                            <a href="./Humidity.html">
+                            <img   src="LatVsHumidity.png" alt="latitude_humidity" style="width:150px;height:150px;">
+                            </a>  
+                        </figure>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-6">
+                        <figure id="main1_figure">
+                            <!-- <figcaption>latitude_Max-Temperature</figcaption> -->
+                            <a href="./wind-speed.html">
+                            <img  src="LatVsWind.png" alt="latitude_wind-speed" style="width:150px;height:150px;">
+                            </a>  
+                        </figure>
+                    </div>
+                  </div>
+                  </main>
+           
+            
+      </div>
+    </div>
+
+        
+        
+        <br><br>
+<!-- <img id="bio-image" src="https://placehold.it/200x200" alt="Your Name"> -->
+
+
+ 
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
